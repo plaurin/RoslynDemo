@@ -10,6 +10,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{770552
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scripts", "Scripts\Scripts.csproj", "{130747F0-87A5-486C-93EA-C8FF397E7AF6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeIssueAndQuickFix", "CodeIssue\CodeIssueAndQuickFix.csproj", "{9E507985-A588-4099-90FC-A2A864A2C9D0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,6 +24,14 @@ Global
 		{9DC73770-2EF6-4152-A4AA-B75220F13428}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9DC73770-2EF6-4152-A4AA-B75220F13428}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9DC73770-2EF6-4152-A4AA-B75220F13428}.Release|Any CPU.Build.0 = Release|Any CPU
+		{130747F0-87A5-486C-93EA-C8FF397E7AF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{130747F0-87A5-486C-93EA-C8FF397E7AF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{130747F0-87A5-486C-93EA-C8FF397E7AF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{130747F0-87A5-486C-93EA-C8FF397E7AF6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E507985-A588-4099-90FC-A2A864A2C9D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E507985-A588-4099-90FC-A2A864A2C9D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E507985-A588-4099-90FC-A2A864A2C9D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E507985-A588-4099-90FC-A2A864A2C9D0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

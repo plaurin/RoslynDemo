@@ -9,10 +9,13 @@ namespace SyntaxAnalysis
 {
 	internal class DgmlNode
 	{
+		private static int nextId;
+
 		private List<DgmlNode> childNodes;
 
 		public DgmlNode(string label, string category, string kind, string span)
 		{
+			this.Id = nextId++;
 			this.Label = label;
 			this.Category = category;
 			this.Kind = kind;
@@ -20,6 +23,7 @@ namespace SyntaxAnalysis
 			this.childNodes = new List<DgmlNode>();
 		}
 
+		public int Id { get; private set; }
 		public string Label { get; private set; }
 		public string Category { get; private set; }
 		public string Kind { get; private set; }

@@ -1,0 +1,1 @@
+"C:\Program Files (x86)\Microsoft Roslyn CTP\Binaries\rcsi.exe" %1
