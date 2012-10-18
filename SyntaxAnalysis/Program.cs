@@ -32,6 +32,13 @@ namespace HelloWorld
 				case 1: break;
 				default: break;
 			}
+
+			if (true)
+				Console.WriteLine(""a"");
+			else if (false)
+				Console.WriteLine(""b"");
+			else
+				Console.WriteLine(""c"");
         }
     }
 }");

@@ -15,21 +15,19 @@ namespace CodeIssueAndQuickFix
 	{
 		public IEnumerable<CodeIssue> GetIssues(IDocument document, CommonSyntaxNode node, CancellationToken cancellationToken)
 		{
-			var nodes = node.ChildNodes().OfType<SwitchStatementSyntax>();
+			var switchNode = (SwitchStatementSyntax)node;
 
-			foreach (var switchNode in switchNodes)
+			var switchSelectionNodes = switchNode.ChildNodes().OfType<SwitchSectionSyntax>();
+
+			if (!switchSelectionNodes
+				.Any(n => n.ChildNodes().OfType<SwitchLabelSyntax>()
+					.Any(l => l.Kind == SyntaxKind.DefaultSwitchLabel)))
 			{
-				var switchSelectionNodes = switchNode.ChildNodes().OfType<SwitchSectionSyntax>();
-
-				if (!switchSelectionNodes
-					.Any(n => n.ChildNodes().OfType<SwitchLabelSyntax>()
-						.Any(l => l.Kind == SyntaxKind.DefaultSwitchLabel)))
-				{
-					var message = "Missing default case!";
-					yield return new CodeIssue(CodeIssueKind.Error, switchNode.SwitchKeyword.Span, message);
+				var message = "Missing default case!";
+				yield return new CodeIssue(CodeIssueKind.Error, switchNode.SwitchKeyword.Span, message,
+					new DefaultCaseCodeAction(document, switchNode));
 					
-					// Todo: How to break the build?
-				}
+				// Todo: How to break the build?
 			}
 		}
 
@@ -37,7 +35,7 @@ namespace CodeIssueAndQuickFix
 		{
 			get
 			{
-				yield return typeof(SyntaxNode);
+				yield return typeof(SwitchStatementSyntax);
 			}
 		}
 

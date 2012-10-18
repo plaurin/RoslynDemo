@@ -101,8 +101,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DefaultCaseCodeAction.cs" />
     <Compile Include="DefaultCaseProvider.cs" />
-    <Compile Include="CyclomaticComplexityProvider.cs" />
+    <Compile Include="CodeComplexityProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
