@@ -36,10 +36,12 @@
   </PropertyGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="Build.csx" />
+    <None Include="Demo Script.csx" />
     <None Include="RunScript.bat" />
     <None Include="Solution Template.csx" />
-    <None Include="Interactive.csx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

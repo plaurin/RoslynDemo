@@ -10,15 +10,12 @@ using Roslyn.Compilers.CSharp;
 
 namespace SyntaxAnalysis
 {
-	class Program
+	public class Program
 	{
-		static void Main(string[] args)
+		public static void Main(string[] args)
 		{
-			SyntaxTree tree = SyntaxTree.ParseText(
+            Parse(
 @"using System;
-using System.Collections;
-using System.Linq;
-using System.Text;
  
 namespace HelloWorld
 {
@@ -26,30 +23,23 @@ namespace HelloWorld
     {
         static void Main(string[] args)
         {
-            // Console.WriteLine(""Hello, World!"");
-			switch (args.Length)
-			{
-				case 1: break;
-				default: break;
-			}
-
-			if (true)
-				Console.WriteLine(""a"");
-			else if (false)
-				Console.WriteLine(""b"");
-			else
-				Console.WriteLine(""c"");
+            Console.WriteLine(""Hello, World!"");
         }
     }
 }");
-
-			var root = (CompilationUnitSyntax)tree.GetRoot();
-			var dgmlNode = ProcessNode(root);
-
-			Console.ReadLine();
-
-			WriteAndOpenDgml(dgmlNode);
 		}
+
+        public static void Parse(string code)
+        {
+            SyntaxTree tree = SyntaxTree.ParseText(code);
+
+            var root = (CompilationUnitSyntax)tree.GetRoot();
+            var dgmlNode = ProcessNode(root);
+
+            Console.ReadLine();
+
+            WriteAndOpenDgml(dgmlNode);
+        }
 
 		private static DgmlNode ProcessNode(SyntaxNode node, int indent = 0)
 		{

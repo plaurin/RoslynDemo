@@ -4,6 +4,7 @@ using System;
 using System.IO;
 using Roslyn.Services;
 
+// This demo is not working because of not implemented portions of Roslyn as of the September 2012 (CTP 3)
 CreateSolution(@"Toto.sln");
 
 void GetUserInput()

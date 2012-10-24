@@ -37,7 +37,7 @@ namespace CodeIssueAndQuickFix
 
 			var complexity = switchBranchs + loopBranchs + conditionalBranchs;
 
-			var message = string.Format("{0} complexity, {1} switch branchs, {2} for/foreach/while branchs, {3} if/else branchs, {4} total nodes",
+			var message = string.Format("{0} complexity: {1} switch branchs, {2} for/foreach/while branchs, {3} if/else branchs, {4} total nodes",
 				complexity, switchBranchs, loopBranchs, conditionalBranchs, totalCount);
 
 			if (complexity < 10)
